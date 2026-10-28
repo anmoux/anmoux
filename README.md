@@ -18,37 +18,19 @@
   <img alt="GitHub contribution grid snake animation" src="https://raw.githubusercontent.com/anmoux/anmoux/output/github-contribution-grid-snake.svg" width="1000" />
 </picture>
 
----
-
-## 🎮 Contribution Arcade
-
 <div align="center">
-
-### 👾 Space Invaders
 
 <img src="https://raw.githubusercontent.com/anmoux/anmoux/invaders-output/commit-invaders.svg" width="1000" alt="Space Invaders Contribution Game" />
 
-### 🧱 Tetris
-
 <img src="https://raw.githubusercontent.com/anmoux/anmoux/output/contribution-graph-tetrominoes.svg" width="1000" alt="Tetris Contribution Animation" />
-
-### 🧨 Breakout
 
 <img src="https://raw.githubusercontent.com/anmoux/anmoux/output/breakout-contribution-graph.svg" width="1000" alt="Breakout Contribution Game" />
 
-### 🚀 Galaga
-
 <img src="https://raw.githubusercontent.com/anmoux/anmoux/output/galaga-contribution-graph.svg" width="1000" alt="Galaga Contribution Game" />
-
-### 🫧 Puzzle Bobble
 
 <img src="https://raw.githubusercontent.com/anmoux/anmoux/output/puzzle-bobble-contribution-graph.svg" width="1000" alt="Puzzle Bobble Contribution Game" />
 
-### 💣 Bomberman
-
 <img src="https://raw.githubusercontent.com/anmoux/anmoux/output/bomberman-contribution-graph.svg" width="1000" alt="Bomberman Contribution Game" />
-
-### 💠 Minesweeper
 
 <img src="https://raw.githubusercontent.com/anmoux/anmoux/output/minesweeper-contribution-graph.svg" width="1000" alt="Minesweeper Contribution Game" />
 
