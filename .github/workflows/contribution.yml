@@ -13,26 +13,25 @@ permissions:
 
 jobs:
   generate:
+    name: Generate Contribution Games
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
     steps:
-      # Checkout with Git credentials enabled
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           persist-credentials: true
 
-      # Generate Pac-Man and arcade games
+      # Pac-Man and arcade games
       - name: Generate Arcade Contribution Games
         uses: abozanona/pacman-contribution-graph@main
         with:
           github_user_name: ${{ github.repository_owner }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           games: "pacman,breakout,galaga,puzzle-bobble,bomberman,minesweeper"
 
-      # Generate Snake in light and dark themes
+      # Snake
       - name: Generate Snake Contribution Graph
         uses: Platane/snk/svg-only@v3
         with:
@@ -41,7 +40,7 @@ jobs:
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      # Generate Tetris contributions
+      # Tetris
       - name: Generate Tetris Contributions
         uses: leereilly/contribution-graph-art@v1
         with:
@@ -52,16 +51,7 @@ jobs:
           output_path: dist/contribution-graph-tetrominoes.svg
           palette: auto
 
-      # Generate Space Invaders
-      # Must run while checkout Git credentials are available
-      - name: Generate Space Invaders
-        uses: Goblinlordx/commit-invaders@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          github_user_name: ${{ github.repository_owner }}
-          output_branch: invaders-output
-
-      # Publish Pac-Man, arcade games, Snake, and Tetris
+      # Publish arcade games, Snake, and Tetris
       - name: Publish Contribution Animations
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
@@ -69,3 +59,25 @@ jobs:
           build_dir: dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  space-invaders:
+    name: Generate Space Invaders
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      # Checkout the existing output branch directly.
+      # This avoids conflicts when the SVG files already exist.
+      - name: Checkout Invaders Branch
+        uses: actions/checkout@v4
+        with:
+          ref: invaders-output
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Generate Space Invaders
+        uses: Goblinlordx/commit-invaders@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_user_name: ${{ github.repository_owner }}
+          output_branch: invaders-output
